@@ -8,24 +8,44 @@
 <body>
     <h1>JSON</h1>
     <h2>Java script object notation</h2>
+    <ul id="users-container">
+
+    </ul>
     <script>
-        const user = {
-             id :245,
-             name:"Safayat",
-             friendAge:[12,14,16],
-             lover:{
-                name:"kamila",
-                favFood:"pizza"
-             },
-             friends:["kamal","jamal"]
+        // const user = {
+        //      id :245,
+        //      name:"Safayat",
+        //      friendAge:[12,14,16],
+        //      lover:{
+        //         name:"kamila",
+        //         favFood:"pizza"
+        //      },
+        //      friends:["kamal","jamal"]
+        //     }
+        // //           {"id":245,"name":"Safayat"}
+        // const userJSON = JSON.stringify(user);
+        // console.log(userJSON);
+        // const userFROMJSON = JSON.parse(userJSON);
+        // console.log(userFROMJSON);
+
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then(response => response.json())
+            .then(json => displayUser(json))
+        
+        function displayUser(users){
+            console.log("users",users);
+            const userNames = users.map(user => user.username);
+
+            const ul = document.getElementById("users-container");
+
+            for(let i=0; i<userNames.length; i++){
+                const username = userNames[i];
+                const li = document.createElement("li");
+                li.innerText = username;
+                ul.appendChild(li);
             }
-        //           {"id":245,"name":"Safayat"}
-        const userJSON = JSON.stringify(user);
-        console.log(userJSON);
-       
-       
-        const userFROMJSON = JSON.parse(userJSON);
-        console.log(userFROMJSON);
+        }
+
     </script>
 </body>
 </html>
