@@ -11,6 +11,7 @@ const normalPerson ={
         return this.salary;
     }
 }
+console.log(normalPerson.firstName);
 
 const heroPerson = {
     firstName : 'Hero',
@@ -33,4 +34,4 @@ heroBillCharge
 
 // normalPerson.chargeBill(150);
 // normalPerson.chargeBill(3000);
-// console.log(normalPerson.salary);
+// console.log(normalPerson.salary); 
