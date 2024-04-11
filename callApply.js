@@ -64,3 +64,9 @@ console.log(heroPerson.salary);
 // normalPerson.chargeBill(150);
 // normalPerson.chargeBill(3000);
 // console.log(normalPerson.salary); 
+
+function addTwoNumbers(num1,num2){
+    return num1 + num2;
+}
+var result = addTwoNumbers(1,2);
+console.log(result);
